@@ -2,6 +2,7 @@ import os,json
 from time import gmtime, strftime, sleep
 
 #Configuer au prealable la commande cli aws avec votre API SECRET KEY et aussi la region souhaité
+#Voir https://docs.aws.amazon.com/cli/latest/index.html
 
 FILE_CREATION_IP = "ip.json"
 GOOD_FILE = 'good.log'
